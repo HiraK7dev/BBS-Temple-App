@@ -6,6 +6,7 @@ import About from './pages/About'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Form from './pages/Form'
+import SubscriptionContext from './context/SubscriptionContext'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <SubscriptionContext>
+      <RouterProvider router={router}/>
+    </SubscriptionContext>
   </React.StrictMode>,
 )
