@@ -1,4 +1,4 @@
-import { ID } from "appwrite";
+import { ID, Query } from "appwrite";
 import { database } from "./config";
 
 export async function list(){
@@ -6,7 +6,9 @@ export async function list(){
         let promise = await database.listDocuments(
             `${import.meta.env.VITE_DATABASE_ID}`,
             `${import.meta.env.VITE_COLLECTION_ID}`,
-            []
+            [
+                Query.orderAsc('name')
+            ]
         );
         return promise; 
     } catch (error) {
@@ -25,4 +27,5 @@ export async function create(name, location, yearPaid){
         "yearPaid": `${yearPaid}`,
         }
     );
+    setTimeout(()=>{ window.location.href = '/'; }, 2000);
 }

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import BottomNavbar from "../components/BottomNavbar";
 import Search from "../components/Search";
 import { Link } from "react-router-dom";
@@ -26,7 +25,7 @@ function Home() {
     return (
       <>
         <div className="w-screen h-screen flex items-center justify-center">
-          <div className="rounded-md h-12 w-12 border-4 border-t-4 border-black animate-spin absolute"></div>
+          <div className="rounded-md h-12 w-12 border-4 border-t-4 border-primary animate-spin absolute"></div>
         </div>
       </>
     );
@@ -62,7 +61,6 @@ function Home() {
 
   return (
     <>
-      <Navbar />
       <div className="flex flex-col justify-start items-center w-screen h-full">
         <div className="flex justify-between items-center h-20 w-full p-3">
           <Search />
@@ -72,11 +70,11 @@ function Home() {
         </div>
         {/* Displaying the data */}
         <div className="w-full h-auto p-4">
-          {data?.documents?.map((data) => {
+          {data?.documents?.map((data, index) => {
             return (
               <>
                 <Link
-                  to=""
+                  to={`/` + index}
                   className="flex justify-start items-center w-full h-6 p-4"
                 >
                   {data.name}

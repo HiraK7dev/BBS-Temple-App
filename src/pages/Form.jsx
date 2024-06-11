@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Navbar from '../components/Navbar'
 import BottomNavbar from '../components/BottomNavbar'
 import { create } from '../appwrite/database';
 
@@ -56,12 +55,10 @@ function Form() {
             location,
             tempYearPaid,
         );
-        setTimeout(()=>{ window.location.href = '/'; }, 3000);
     }
 
   return (
     <>
-    <Navbar/>
     <div className='h-full w-full flex flex-col justify-center items-center p-6 overflow-auto'>
         <form className='h-auto w-full flex flex-col justify-evenly items-center'>
         <label className="form-control w-full">
